@@ -1,0 +1,36 @@
+env:
+  global:
+    - secure: AWZcaL73uUkG0XX3dJi8g57WKzbrGZVJXXZ0nRiI2tHVpqyUhVUK2xJSG7Mb3w4+v0zVVNlZ4JQvpTVJvINUq8rzKIytkv5K+QHexwcazK0HUwvXjRgVstwbZ5qlexOTO03sbzakRJopLbMdls7bQaknuMiQW7aXI+IGLua0zVeiljuNGiE9bOTDCVgymgQREnyPcgwzoIcWem9hixGs8XofBDA+ziUbxcIbnH358Xqyp40Sz0X7zATc5QMimHWCgI72zSMJyFKL5REbVAXZWJzNuXF3iu7QftGeoqb1nsxC8NB0GllVzVGNNcqUgQ73/JcPWCACP2IpeCRjVfpV9F1V4yHAoLCQ9QFxkmpGVenKELBTF5rmHGO5AdQGHHRePEzh+xnubSp2FV5yTm13fR/jIHWtErYQxeI8Ew6GWTCzxichmy/ogClfr5JvyE0Thpyy+p3QoeI+HZ14JdTTyVE0YVaqaQwvLGfuvVX31M59VP7cXZMXBU1SN1XZ7RZpkOokblvCJYgT05CAjlLSycP27xdJj6kr8qvyGkqAlJ0fYoHCHOoiyxLunf6wXNZkWMwE6lzeQnXDbRe13ngTsuxZP7g7qGBWbKyU8nl8auUvRzlrRCvFTdVB/YeeA01gAao53HTuG3gdGlANx0BBZaQNJc9cX6DxeJ73n0wqsZE=
+    - GIT_NAME: Travis CI
+    - GIT_EMAIL: dead-hosts@funilrys.com
+    - TRAVIS_REPO_SLUG: Ultimate-Hosts-Blacklist/Spotify-Ad-free
+    - GIT_BRANCH: master
+
+dist: xenial
+sudo: required
+language: python
+
+python:
+  - "3.7"
+
+matrix:
+  fast_finish: true
+
+cache:
+  - pip
+
+addons:
+  apt:
+    packages:
+      - dos2unix
+
+install:
+  - pip3 install --upgrade pip
+  - pip3 install requests
+
+script:
+  - python3 ./update.py
+
+notifications:
+  on_success:   change
+  on_failure:   always
