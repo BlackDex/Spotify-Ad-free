@@ -1,6 +1,6 @@
 {
     "/home/travis/build/Ultimate-Hosts-Blacklist/Spotify-Ad-free/domains.list": {
-        "1539516849": [
+        "1539603376": [
             "ads-fa.spotify.com",
             "ads.spotify.com",
             "audio2.spotify.com",
@@ -12,6 +12,7 @@
             "sto3-accesspoint-a88.sto3.spotify.net",
             "sto3-weblb-wg4.sto3.spotify.com",
             "v.jwpcdn.com"
-        ]
+        ],
+        "to_test": []
     }
 }
